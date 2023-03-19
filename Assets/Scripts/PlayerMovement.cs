@@ -10,30 +10,21 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private float speed = 2f;
     // Update is called once per frame
     void Update()
     {
-        //to add diagnol movement
-
-        if (Input.GetKeyDown("space"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 5, 0);
-        }
-        if (Input.GetKey("left"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(-5, 0, 0);
-        }
-        if (Input.GetKey("right"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(5, 0, 0);
-        }       
-        if (Input.GetKey("down"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
-        }
-        if (Input.GetKey("up"))
-        {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 5);
-        }       
+        if (Input.GetKey(KeyCode.RightArrow)){
+			transform.position += Vector3.right * speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.LeftArrow)){
+			transform.position += Vector3.left* speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.UpArrow)){
+			transform.position += Vector3.forward * speed * Time.deltaTime;
+		}
+		if (Input.GetKey(KeyCode.DownArrow)){
+			transform.position += Vector3.back* speed * Time.deltaTime;
+		}     
     }
 }
