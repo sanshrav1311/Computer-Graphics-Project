@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     // public GameObject hitEffect;
-
     // void OnTriggerEnter(Collider other)
     // {
     //     if(other.gameObject.name.Equals("Enemy"))
     //     {
     //         other.GetComponent<Enemy>().HP -= 50;
     //     }
-    
-
     // }
     void OnCollisionEnter(Collision collision)
     {
@@ -27,5 +23,4 @@ public class Bullet : MonoBehaviour
         // Destroy(effect, 5f);
         Destroy(gameObject);
     }
-
 }
