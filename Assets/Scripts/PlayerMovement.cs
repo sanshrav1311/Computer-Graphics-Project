@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         float cosY = Mathf.Cos((angle * Mathf.PI)/180);
         // Debug.Log(cosY + " " + sinY + " " + angle + " " + horizontalInput);
         float movX = (verticalInput * speed * sinY) + (horizontalInput * speed * cosY);
-        float movZ = (verticalInput * speed * cosY) + (-1 * horizontalInput * speed * sinY);
+        float movZ = (verticalInput * speed * cosY) + (-1 * horizontalInput * speed * sinY); 
         rb.velocity = new Vector3(movX, 0, movZ);
     }
 }
