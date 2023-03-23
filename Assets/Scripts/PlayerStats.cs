@@ -12,6 +12,10 @@ public class PlayerStats : MonoBehaviour
         HP = 100f;
     }
 
+    public void TakeDamage(float damage){
+        //HP -= 50f;
+        Debug.Log("you take " + damage + " damage");
+    }
     // Update is called once per frame
     void Update()
     {
