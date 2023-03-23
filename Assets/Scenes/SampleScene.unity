@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 28372bf23ec13d15b8064601b55510e5, type: 2}
 --- !u!1 &190553299
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 12020278760363041, guid: e0f63309c0c93d579a52128dc2327063, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 12020278760363053, guid: e0f63309c0c93d579a52128dc2327063, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1056,6 +1060,10 @@ PrefabInstance:
     - target: {fileID: 6196759572541831044, guid: 1338047f7491de1ccb92af2e52edfc12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104185286063841624, guid: 1338047f7491de1ccb92af2e52edfc12, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1338047f7491de1ccb92af2e52edfc12, type: 3}
