@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform firePoint;
     public float HP;
     float attackRadius = 5f;
     public GameObject bulletPrefab;
@@ -13,18 +12,18 @@ public class Enemy : MonoBehaviour
     public float force = 5f;
     Transform target;
     NavMeshAgent agent;
+    private Transform FP;
     
     void Start()
     {
+        FP = gameObject.transform.GetChild(0).gameObject.transform;
         HP = 100f;
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        firePoint = GameObject.FindGameObjectWithTag("EFP").transform;
     }
 
     void Update()
     {
-        transform.LookAt(target);
         attackCooldown -= Time.deltaTime;
         float distance = Vector3.Distance(target.position, transform.position);
         if(distance >= attackRadius)
@@ -38,9 +37,10 @@ public class Enemy : MonoBehaviour
         }
     }
     void Attack(){
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        transform.LookAt(target);
+        GameObject bullet = Instantiate(bulletPrefab, FP.position, FP.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
+        rb.AddForce(FP.forward * force, ForceMode.Impulse);
         setAttackCooldown();
     }
     public void TakeDamage(float damage)
@@ -52,11 +52,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, 5f);
-    }
     void setAttackCooldown(){
         attackCooldown = 1f;
     }
