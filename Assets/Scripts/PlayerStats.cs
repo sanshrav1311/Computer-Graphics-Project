@@ -9,12 +9,15 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP = 100f;
+        HP = 1000f;
     }
 
     public void TakeDamage(float damage){
-        //HP -= 50f;
+        HP -= damage;
         Debug.Log("you take " + damage + " damage");
+        if(HP <= 0){
+            // Destroy(gameObject);
+        }
     }
     // Update is called once per frame
     void Update()

@@ -12,12 +12,13 @@ public class Bullet : MonoBehaviour
     //         other.GetComponent<Enemy>().HP -= 50;
     //     }
     // }
+    public float damageBUFF = 1f;
     void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Enemy")
          {
              // do damage here, for example:
-             collision.gameObject.GetComponent<Enemy>().TakeDamage(50f);
+             collision.gameObject.GetComponent<Enemy>().TakeDamage(50f * damageBUFF);
          }
          if (collision.transform.tag == "Player")
          {
