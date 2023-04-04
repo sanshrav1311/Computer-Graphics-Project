@@ -15,10 +15,9 @@ public class DamagePowerUp : MonoBehaviour
          if (collision.transform.tag == "Player")
          {
              // do damage here, for example:
-            collision.gameObject.GetComponent<Shooting>().damageBUFF = 2f;
+            collision.gameObject.GetComponent<Shooting>().changeDamageBuff(2);
             Destroy(gameObject);
-            StartCoroutine(DPU());
-            collision.gameObject.GetComponent<Shooting>().damageBUFF = 1f;
+            
          }
         
     }
@@ -27,8 +26,6 @@ public class DamagePowerUp : MonoBehaviour
     {
         
     }
-    IEnumerator DPU(){
-        yield return new WaitForSeconds(20);
-    }
+
 
 }
