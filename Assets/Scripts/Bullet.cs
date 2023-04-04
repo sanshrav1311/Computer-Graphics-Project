@@ -25,6 +25,11 @@ public class Bullet : MonoBehaviour
              // do damage here, for example:
              collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50f);
          }
+         if (collision.transform.tag == "Artifact")
+         {
+             // do damage here, for example:
+             collision.gameObject.GetComponent<ArtifactStats>().TakeDamage(50);
+         }
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
         Destroy(gameObject);
