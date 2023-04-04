@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     public float attackCooldown = 0f;
     public float force = 5f;
     Transform target;
+    Transform artifact;
+    Transform ct;
     NavMeshAgent agent;
     private Transform FP;
     
@@ -20,15 +22,22 @@ public class Enemy : MonoBehaviour
         HP = 100f;
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        artifact = GameObject.FindGameObjectWithTag("Artifact").transform;
+
     }
 
     void Update()
     {
         attackCooldown -= Time.deltaTime;
         float distance = Vector3.Distance(target.position, transform.position);
+        ct = target;
+        if(distance > Vector3.Distance(artifact.position, transform.position)){
+            distance = Vector3.Distance(artifact.position, transform.position);
+            ct = artifact;
+        }
         if(distance >= attackRadius)
         {
-            agent.SetDestination(target.position);   
+            agent.SetDestination(ct.position);   
         }
         else{
             if(attackCooldown <= 0){
@@ -37,7 +46,7 @@ public class Enemy : MonoBehaviour
         }
     }
     void Attack(){
-        transform.LookAt(target);
+        transform.LookAt(ct);
         GameObject bullet = Instantiate(bulletPrefab, FP.position, FP.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(FP.forward * force, ForceMode.Impulse);
