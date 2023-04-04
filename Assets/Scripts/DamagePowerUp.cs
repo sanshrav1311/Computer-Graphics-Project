@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+public class DamagePowerUp : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,10 @@ public class PowerUp : MonoBehaviour
          if (collision.transform.tag == "Player")
          {
              // do damage here, for example:
-             collision.gameObject.GetComponent<Shooting>().damageBUFF = 2f;
-             Destroy(gameObject);
+            collision.gameObject.GetComponent<Shooting>().damageBUFF = 2f;
+            Destroy(gameObject);
+            StartCoroutine(DPU());
+            collision.gameObject.GetComponent<Shooting>().damageBUFF = 1f;
          }
         
     }
@@ -25,4 +27,8 @@ public class PowerUp : MonoBehaviour
     {
         
     }
+    IEnumerator DPU(){
+        yield return new WaitForSeconds(20);
+    }
+
 }

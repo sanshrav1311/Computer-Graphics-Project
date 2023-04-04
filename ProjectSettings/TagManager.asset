@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - EFP
+  - Artifact
   layers:
   - Default
   - TransparentFX

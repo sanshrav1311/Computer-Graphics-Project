@@ -6,10 +6,14 @@ public class PlayerStats : MonoBehaviour
 {
 
     public float HP;
+    public int coins;
+    public int score;
     // Start is called before the first frame update
     void Start()
     {
         HP = 1000f;
+        coins = 0;
+        score = 0;
     }
 
     public void TakeDamage(float damage){
