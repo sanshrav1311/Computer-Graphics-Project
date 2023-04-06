@@ -20,6 +20,11 @@ public class Bullet : MonoBehaviour
              // do damage here, for example:
              collision.gameObject.GetComponent<Enemy>().TakeDamage(50f * damageBUFF);
          }
+         if (collision.transform.tag == "Enemy2")
+         {
+             // do damage here, for example:
+             collision.gameObject.GetComponent<Enemy2>().TakeDamage(50f * damageBUFF);
+         }
          if (collision.transform.tag == "Player")
          {
              // do damage here, for example:
