@@ -454,7 +454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2206241515415660823, guid: 483e26695a60bf665b3ef1621d9af451, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2206241515415660823, guid: 483e26695a60bf665b3ef1621d9af451, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1386,7 +1386,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681598536}
-  - component: {fileID: 1681598535}
   - component: {fileID: 1681598533}
   - component: {fileID: 1681598537}
   - component: {fileID: 1681598538}
@@ -1414,14 +1413,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1681598535
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681598532}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1681598536
 Transform:
   m_ObjectHideFlags: 0
