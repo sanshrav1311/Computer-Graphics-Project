@@ -9,7 +9,7 @@ public class Enemy3 : MonoBehaviour
     float attackRadius = 5f;
     public GameObject GrenadePref;
     public float attackCooldown = 0f;
-    public float force = 5f;
+    public float force = 2.5f;
     Transform target;
     Transform artifact;
     Transform ct;

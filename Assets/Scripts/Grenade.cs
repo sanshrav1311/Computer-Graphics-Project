@@ -12,6 +12,26 @@ public class Grenade : MonoBehaviour
     //         other.GetComponent<Enemy>().HP -= 50;
     //     }
     // }
+    GameObject target;
+    GameObject artifact;
+
+    void Start() {
+        target = GameObject.FindGameObjectWithTag("Player");
+        artifact = GameObject.FindGameObjectWithTag("Artifact");
+        StartCoroutine(explode());       
+    }
+    IEnumerator explode(){
+        yield return new WaitForSeconds(0.7f);
+        float distance = Vector3.Distance(target.transform.position, transform.position);
+        if(distance <= 1f){
+            target.GetComponent<PlayerStats>().TakeDamage(100f);
+        }
+        distance = Vector3.Distance(artifact.transform.position, transform.position);
+        if(distance <= 1f){
+            artifact.GetComponent<ArtifactStats>().TakeDamage(100);
+        }
+        Destroy(gameObject);
+    }
     public float damageBUFF = 1f;
     void OnCollisionEnter(Collision collision)
     {

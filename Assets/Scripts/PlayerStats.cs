@@ -9,14 +9,19 @@ public class PlayerStats : MonoBehaviour
     public int coins;
     public int score;
     public float invincible;
+    public Transform firePoint;
+    public GameObject Gun1;
+    public GameObject Gun2;
     // Start is called before the first frame update
     void Start()
     {
+
         HP = 1000f;
         coins = 0;
         score = 0;
         invincible = 1f;
-
+        firePoint = GameObject.FindGameObjectWithTag("FP").transform;
+        Instantiate(Gun1, firePoint.position, firePoint.rotation, this.transform);
     }
 
     public void TakeDamage(float damage){

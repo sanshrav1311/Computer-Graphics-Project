@@ -8,6 +8,11 @@ TagManager:
   - EFP
   - Artifact
   - Enemy2
+  - Enemy3
+  - Gun
+  - FP
+  - Sniper
+  - MachineGun
   layers:
   - Default
   - TransparentFX
