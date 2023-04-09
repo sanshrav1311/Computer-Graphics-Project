@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571328, b: 0.3069218, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1912,6 +1912,54 @@ PrefabInstance:
     - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
       propertyPath: maxMoonLightIntensity
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].time
+      value: 0.047828615
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].value
+      value: 0.7707659
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[2].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].inSlope
+      value: 1.670079
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].inWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].outSlope
+      value: 1.670079
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].outWeight
+      value: 0.17294301
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
+      propertyPath: lightChangeCurve.m_Curve.Array.data[1].weightedMode
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
