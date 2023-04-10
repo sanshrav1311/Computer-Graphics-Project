@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 6421182895079355530}
   - component: {fileID: 6421182895079355529}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  bulletPrefab: {fileID: 5532336853311684525, guid: 9f966f882b553cdb3bd6219dbd11ba85, type: 3}
+  bulletPrefab: {fileID: 5532336853311684525, guid: 115a37422f1ef608ea700668cf34f789, type: 3}
   attackCooldown: 0
   force: 5
 --- !u!54 &6421182895079355529

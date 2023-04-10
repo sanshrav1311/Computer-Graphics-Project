@@ -6,19 +6,24 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-    public float force = 20f;
+    public float force = 1f;
     public float damageBuff;
+    public float timeUntilNextShot;
+    public float fireRate;
 
     void Start()
     {
+        firePoint = GameObject.FindGameObjectWithTag("FP").transform;
         damageBuff = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1")){
+        if (Input.GetMouseButton(0) && timeUntilNextShot < Time.time) // Fire Input
+        {
             Shoot();
+            timeUntilNextShot = Time.time + fireRate; // Fire Rate
         }
     }
 

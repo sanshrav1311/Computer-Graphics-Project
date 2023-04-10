@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     // public GameObject hitEffect;
     // void OnTriggerEnter(Collider other)
@@ -15,24 +15,19 @@ public class Bullet : MonoBehaviour
     public float damageBUFF = 1f;
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Enemy")
-         {
-             // do damage here, for example:
-             collision.gameObject.GetComponent<Enemy>().TakeDamage(50f * damageBUFF);
-         }
-         if (collision.transform.tag == "Enemy2")
-         {
-             // do damage here, for example:
-             collision.gameObject.GetComponent<Enemy2>().TakeDamage(50f * damageBUFF);
-         }
-         if (collision.transform.tag == "Enemy3")
-         {
-             // do damage here, for example:
-             collision.gameObject.GetComponent<Enemy3>().TakeDamage(50f * damageBUFF);
-         }
+        // if (collision.transform.tag == "Enemy")
+        //  {
+        //      // do damage here, for example:
+        //      collision.gameObject.GetComponent<Enemy>().TakeDamage(50f * damageBUFF);
+        //  }
+        //  if (collision.transform.tag == "Enemy2")
+        //  {
+        //      // do damage here, for example:
+        //      collision.gameObject.GetComponent<Enemy2>().TakeDamage(50f * damageBUFF);
+        //  }
          if (collision.transform.tag == "Player")
          {
-             // do damage here,  for example:
+             // do damage here, for example:
              collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50f);
          }
          if (collision.transform.tag == "Artifact")
