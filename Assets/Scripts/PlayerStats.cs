@@ -15,7 +15,6 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         HP = 1000f;
         coins = 0;
         score = 0;
@@ -44,4 +43,8 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+    public void coinPlus(int x){
+        coins += x;
+    }
+
 }
