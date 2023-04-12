@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7619cae0027e06aafbcbb033fb3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoke: {fileID: 5566926174844166302, guid: 86c2f98ea46ca491d9747654beccd599, type: 3}
   damageBUFF: 1
 --- !u!1001 &588783781138951712
 PrefabInstance:

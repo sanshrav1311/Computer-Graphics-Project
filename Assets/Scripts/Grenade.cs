@@ -14,6 +14,13 @@ public class Grenade : MonoBehaviour
     // }
     GameObject target;
     GameObject artifact;
+    public ParticleSystem smoke;
+    private float smokeTime = 2f;
+    void smokeFun()
+{
+    ParticleSystem smokeInstance = Instantiate(smoke, this.transform);
+    Destroy(smokeInstance, smokeTime);
+}
 
     void Start() {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -30,6 +37,7 @@ public class Grenade : MonoBehaviour
         if(distance <= 1f){
             artifact.GetComponent<ArtifactStats>().TakeDamage(100);
         }
+        smokeFun();
         Destroy(gameObject);
     }
     public float damageBUFF = 1f;
@@ -57,6 +65,7 @@ public class Grenade : MonoBehaviour
          }
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
+        smokeFun();
         Destroy(gameObject);
     }
 }

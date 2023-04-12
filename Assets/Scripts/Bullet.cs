@@ -40,8 +40,8 @@ public class Bullet : MonoBehaviour
              // do damage here, for example:
              collision.gameObject.GetComponent<ArtifactStats>().TakeDamage(50);
          }
+        Destroy(gameObject);
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
-        Destroy(gameObject);
     }
 }
