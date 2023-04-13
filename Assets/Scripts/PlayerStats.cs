@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-
     public float HP;
     public int coins;
     public int score;
@@ -30,9 +29,11 @@ public class PlayerStats : MonoBehaviour
             // Destroy(gameObject);
         }
     }
+
     public void changeInvincibility(int iv){
         StartCoroutine(DPU(iv));
     }
+
     IEnumerator DPU(int iv){
         invincible = iv;
         yield return new WaitForSeconds(20);
@@ -47,5 +48,4 @@ public class PlayerStats : MonoBehaviour
     public void coinPlus(int x){
         coins += x;
     }
-
 }

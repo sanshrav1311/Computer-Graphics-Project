@@ -62,7 +62,7 @@ public class Enemy3 : MonoBehaviour
     }
 
     void setAttackCooldown(){
-        attackCooldown = 1f;
+        attackCooldown = 2f;
     }
 }
 

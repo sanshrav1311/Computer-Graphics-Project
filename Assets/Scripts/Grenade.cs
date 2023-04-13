@@ -18,8 +18,8 @@ public class Grenade : MonoBehaviour
     private float smokeTime = 2f;
     void smokeFun()
 {
-    ParticleSystem smokeInstance = Instantiate(smoke, this.transform);
-    Destroy(smokeInstance, smokeTime);
+    ParticleSystem smokeInstance = Instantiate(smoke, transform.position, transform.rotation) as ParticleSystem;
+    Destroy(smokeInstance.gameObject, smokeTime);
 }
 
     void Start() {
@@ -43,6 +43,18 @@ public class Grenade : MonoBehaviour
     public float damageBUFF = 1f;
     void OnCollisionEnter(Collision collision)
     {
+         if (collision.transform.tag == "Player")
+         {
+             // do damage here, for example:
+             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(100f);
+         }
+         if (collision.transform.tag == "Artifact")
+         {
+             // do damage here, for example:
+             collision.gameObject.GetComponent<ArtifactStats>().TakeDamage(100);
+         }
+        smokeFun();
+        Destroy(gameObject);
         // if (collision.transform.tag == "Enemy")
         //  {
         //      // do damage here, for example:
@@ -53,19 +65,7 @@ public class Grenade : MonoBehaviour
         //      // do damage here, for example:
         //      collision.gameObject.GetComponent<Enemy2>().TakeDamage(50f * damageBUFF);
         //  }
-         if (collision.transform.tag == "Player")
-         {
-             // do damage here, for example:
-             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50f);
-         }
-         if (collision.transform.tag == "Artifact")
-         {
-             // do damage here, for example:
-             collision.gameObject.GetComponent<ArtifactStats>().TakeDamage(50);
-         }
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
-        smokeFun();
-        Destroy(gameObject);
     }
 }
