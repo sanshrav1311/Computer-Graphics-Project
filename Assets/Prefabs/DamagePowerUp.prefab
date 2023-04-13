@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3670757707699584888}
   - component: {fileID: 3601760112547378342}
-  - component: {fileID: 3163250600464158919}
+  - component: {fileID: 3980011562016158779}
   m_Layer: 0
   m_Name: DamagePowerUp
   m_TagString: Untagged
@@ -47,7 +47,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3163250600464158919
+--- !u!114 &3980011562016158779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

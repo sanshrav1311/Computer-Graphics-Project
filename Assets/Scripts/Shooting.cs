@@ -29,12 +29,6 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    void Shoot(){
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        bullet.GetComponent<Bullet>().damageBUFF = damageBuff;
-        rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
-    }
     public void changeDamageBuff(int db){
         StartCoroutine(DPU(db));
     }
@@ -42,5 +36,11 @@ public class Shooting : MonoBehaviour
         damageBuff = db;
         yield return new WaitForSeconds(20);
         damageBuff = 1f;
+    }
+    void Shoot(){
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        bullet.GetComponent<Bullet>().damageBUFF = damageBuff;
+        rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
     }
 }

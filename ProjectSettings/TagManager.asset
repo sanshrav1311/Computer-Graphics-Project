@@ -13,6 +13,7 @@ TagManager:
   - FP
   - Sniper
   - MachineGun
+  - Rain
   layers:
   - Default
   - TransparentFX
