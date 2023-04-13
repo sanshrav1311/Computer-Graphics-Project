@@ -17,7 +17,7 @@ public class Rain : MonoBehaviour
     {
          attackCooldown -= Time.deltaTime;
     }
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
          if (collision.transform.tag == "Player")
          {
@@ -27,7 +27,7 @@ public class Rain : MonoBehaviour
          }
     }
     void setAttackCooldown(){
-        attackCooldown = 1f;
+        attackCooldown = 0.5f;
     }
     void damage(Collision collision){
         collision.gameObject.GetComponent<PlayerStats>().TakeDamage(10f);
