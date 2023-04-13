@@ -1619,8 +1619,9 @@ MonoBehaviour:
   score: 0
   invincible: 1
   firePoint: {fileID: 0}
-  Gun1: {fileID: 3472050102082668712, guid: 165160f82b8368664b1d8139dfd9fcbf, type: 3}
+  Gun1: {fileID: 3472050102082668712, guid: b2a0928be6e8c6034a9ac6ec31b8e3fb, type: 3}
   Gun2: {fileID: 3472050102082668712, guid: 165160f82b8368664b1d8139dfd9fcbf, type: 3}
+  inHand: {fileID: 0}
 --- !u!1 &1886585842
 GameObject:
   m_ObjectHideFlags: 0
