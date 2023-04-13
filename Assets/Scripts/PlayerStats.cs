@@ -43,7 +43,7 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
-    onKeyDown()
+    // onKeyDown();
     public void coinPlus(int x){
         coins += x;
     }
