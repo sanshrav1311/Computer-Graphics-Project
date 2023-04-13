@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shooting : MonoBehaviour
 {
+    public Sprite img;
     public Transform firePoint;
     public GameObject bulletPrefab;
     public float force = 1f;
