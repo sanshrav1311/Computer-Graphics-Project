@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     public float damage;
     public float timeUntilNextShot;
     public float fireRate;
+    public int ammo;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0) && timeUntilNextShot < Time.time) // Fire Input
+        if (Input.GetMouseButton(0) && timeUntilNextShot < Time.time && ammo > 0) // Fire Input
         {
             Shoot();
             timeUntilNextShot = Time.time + fireRate; // Fire Rate
@@ -43,5 +44,9 @@ public class Shooting : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         bullet.GetComponent<Bullet>().damageBUFF = damageBuff * damage;
         rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
+        ammo -= 1;
+    }
+    public void assignAmmo(int a){
+        ammo = a;
     }
 }

@@ -53,6 +53,7 @@ MonoBehaviour:
   damage: 1
   timeUntilNextShot: 0
   fireRate: 0.6
+  ammo: 20
 --- !u!1001 &1602236737645566488
 PrefabInstance:
   m_ObjectHideFlags: 0

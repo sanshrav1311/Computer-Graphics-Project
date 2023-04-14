@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public Transform firePoint;
     public GameObject Gun1;
     public GameObject Gun2;
+    public int g2ammo;
     public GameObject inHand;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour
         invincible = 1f;
         firePoint = GameObject.FindGameObjectWithTag("FP").transform;
         inHand = Instantiate(Gun1, firePoint.position, firePoint.rotation, this.transform);
+        g2ammo = Gun2.GetComponent<Shooting>().ammo;
     }
 
     public void TakeDamage(float damage){
@@ -44,13 +46,17 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown("f")){
+            int t = inHand.GetComponent<Shooting>().ammo;
             GameObject temp = Gun1;
             Gun1 = Gun2;
             Gun2 = temp;
             Destroy(inHand);
             inHand = Instantiate(Gun1, firePoint.position, firePoint.rotation, this.transform);
+            inHand.GetComponent<Shooting>().assignAmmo(g2ammo);
+            g2ammo = t;
         }
     }
+    // public void changeGun()
     // onKeyDown();
     public void coinPlus(int x){
         coins += x;
