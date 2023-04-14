@@ -13,6 +13,9 @@ public class PlayerStats : MonoBehaviour
     public GameObject Gun2;
     public int g2ammo;
     public GameObject inHand;
+    public GameObject pistol;
+    public GameObject mgun;
+    public GameObject sniper;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +58,32 @@ public class PlayerStats : MonoBehaviour
             inHand.GetComponent<Shooting>().assignAmmo(g2ammo);
             g2ammo = t;
         }
+
     }
-    // public void changeGun()
+    // void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.transform.tag == "gun1")
+    //      {
+    //          Destroy(inHand);
+    //         inHand = Instantiate(pistol, firePoint.position, firePoint.rotation, this.transform);
+    //      }
+    //      if (collision.transform.tag == "gun2")
+    //      {
+    //          Destroy(inHand);
+    //         inHand = Instantiate(mgun, firePoint.position, firePoint.rotation, this.transform);
+    //      }
+    //      if (collision.transform.tag == "gun3")
+    //      {
+    //          Destroy(inHand);
+    //         inHand = Instantiate(sniper, firePoint.position, firePoint.rotation, this.transform);
+    //      }
+
+    //     Destroy(collision.gameObject);
+    // }
+    public void changeGun(GameObject a){
+        Destroy(inHand);
+        inHand = Instantiate(a, firePoint.position, firePoint.rotation, this.transform);
+    }
     // onKeyDown();
     public void coinPlus(int x){
         coins += x;

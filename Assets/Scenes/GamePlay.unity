@@ -1824,7 +1824,11 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   Gun1: {fileID: 3472050102082668712, guid: 165160f82b8368664b1d8139dfd9fcbf, type: 3}
   Gun2: {fileID: 3472050102082668712, guid: b2a0928be6e8c6034a9ac6ec31b8e3fb, type: 3}
+  g2ammo: 0
   inHand: {fileID: 0}
+  pistol: {fileID: 3472050102082668712, guid: 165160f82b8368664b1d8139dfd9fcbf, type: 3}
+  mgun: {fileID: 3472050102082668712, guid: b2a0928be6e8c6034a9ac6ec31b8e3fb, type: 3}
+  sniper: {fileID: 3472050102082668712, guid: 1bac2af828372422f91ecc9881df2c56, type: 3}
 --- !u!198 &1718494015 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 868056487762512369, guid: 8ddb8a1d91b189aecb5d7a4df4ec9a6c, type: 3}

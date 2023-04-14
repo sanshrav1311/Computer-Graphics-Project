@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7055205766958034021}
   - component: {fileID: 6923628777027224345}
+  - component: {fileID: 6169700935880749377}
   m_Layer: 0
   m_Name: Gun3
-  m_TagString: Untagged
+  m_TagString: gun3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +47,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6169700935880749377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716072778317490824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31201b64d79c7c67b35a77281889b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 3472050102082668712, guid: 1bac2af828372422f91ecc9881df2c56, type: 3}
 --- !u!1001 &7127073342828608958
 PrefabInstance:
   m_ObjectHideFlags: 0

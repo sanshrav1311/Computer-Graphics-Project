@@ -15,6 +15,9 @@ TagManager:
   - MachineGun
   - Rain
   - boss
+  - gun1
+  - gun2
+  - gun3
   layers:
   - Default
   - TransparentFX
