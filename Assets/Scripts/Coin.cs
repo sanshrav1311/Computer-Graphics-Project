@@ -7,6 +7,8 @@ public class Coin : MonoBehaviour
     PlayerStats ps;
     // [SerializeField] private float speed = 100f;
     float yRotation = 1;
+    public AudioSource coinSound;
+    public GameObject sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,11 @@ public class Coin : MonoBehaviour
          {
              // do damage here, for example:
              ps.coinPlus(1);
-            Destroy(gameObject);
+            StartCoroutine(yep());
          }
+    }
+    IEnumerator yep(){
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

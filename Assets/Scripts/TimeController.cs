@@ -42,12 +42,20 @@ public class TimeController : MonoBehaviour
 
      [SerializeField]
     private float maxMoonLightIntensity;
-
-    private DateTime currentTime;
+    public DateTime currentTime;
 
     private TimeSpan sunriseTime;
 
     private TimeSpan sunsetTime;
+    public int DayCount = 0; 
+        public static bool GameIsPaused = false;
+
+    public GameObject pauseMenuUI;
+    public TextMeshProUGUI day;
+    public TimeController a;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,15 +63,20 @@ public class TimeController : MonoBehaviour
         currentTime=DateTime.Now.Date + TimeSpan.FromHours(startHour);
         sunriseTime=TimeSpan.FromHours(sunriseHour);
         sunsetTime=TimeSpan.FromHours(sunsetHour);
-        
+        day.text=GetComponent<TMPro.TextMeshProUGUI>().text;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(currentTime.Hour != 12){
         UpdateTimeOfDay();
         RotateSun();
-        UpdateLightSettings();
+        UpdateLightSettings();}
+        if(currentTime.Hour == 12){
+            Pause();
+        }
     }
 
     private void UpdateTimeOfDay()
@@ -73,7 +86,8 @@ public class TimeController : MonoBehaviour
         {
             timeText.text=currentTime.ToString("HH:mm");
         }
-}
+        Debug.Log(currentTime.Hour);
+    }
 
     private void RotateSun()
     {
@@ -118,6 +132,24 @@ public class TimeController : MonoBehaviour
             difference+= TimeSpan.FromHours(24);
         }
         return difference;
+    }
+    public void Pause()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        pauseMenuUI.SetActive(true);
+        Time.timeScale=0f;
+        GameIsPaused = true;
+
+    }
+    public void Resume()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        currentTime = new System.DateTime(currentTime.Year, currentTime.Month, currentTime.Day, 13, currentTime.Minute, currentTime.Second);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale=1f;
+        GameIsPaused = false;
+        DayCount += 1;
+        day.text = DayCount.ToString();
     }
 
 }

@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     Transform ct;
     NavMeshAgent agent;
     private Transform FP;
+    public TimeController a;
     
     void Start()
     {
@@ -23,6 +24,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         artifact = GameObject.FindGameObjectWithTag("Artifact").transform;
+        a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
 
     }
 
@@ -43,6 +45,9 @@ public class Enemy : MonoBehaviour
             if(attackCooldown <= 0){
                 Attack();
             }
+        }
+        if(a.currentTime.Hour == 12){
+            Destroy(gameObject);
         }
     }
     void Attack(){

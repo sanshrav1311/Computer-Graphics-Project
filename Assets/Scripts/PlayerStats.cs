@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerStats : MonoBehaviour
 {
     public float HP;
+    public float maxHP = 1000f;
     public int coins;
     public int score;
     public float invincible;
@@ -16,16 +21,22 @@ public class PlayerStats : MonoBehaviour
     public GameObject pistol;
     public GameObject mgun;
     public GameObject sniper;
+    public TextMeshProUGUI COINStext;
+    public Slider HealthBar;
     // Start is called before the first frame update
     void Start()
     {
         HP = 1000f;
+        HealthBar.value = HP;
         coins = 0;
         score = 0;
         invincible = 1f;
         firePoint = GameObject.FindGameObjectWithTag("FP").transform;
         inHand = Instantiate(Gun1, firePoint.position, firePoint.rotation, this.transform);
         g2ammo = Gun2.GetComponent<Shooting>().ammo;
+        COINStext.text=GetComponent<TMPro.TextMeshProUGUI>().text;
+
+
     }
 
     public void TakeDamage(float damage){
@@ -33,7 +44,9 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("you take " + damage + " damage");
         if(HP <= 0){
             // Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
+        HealthBar.value = HP;
     }
 
     public void changeInvincibility(int iv){
@@ -60,26 +73,7 @@ public class PlayerStats : MonoBehaviour
         }
 
     }
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     if (collision.transform.tag == "gun1")
-    //      {
-    //          Destroy(inHand);
-    //         inHand = Instantiate(pistol, firePoint.position, firePoint.rotation, this.transform);
-    //      }
-    //      if (collision.transform.tag == "gun2")
-    //      {
-    //          Destroy(inHand);
-    //         inHand = Instantiate(mgun, firePoint.position, firePoint.rotation, this.transform);
-    //      }
-    //      if (collision.transform.tag == "gun3")
-    //      {
-    //          Destroy(inHand);
-    //         inHand = Instantiate(sniper, firePoint.position, firePoint.rotation, this.transform);
-    //      }
 
-    //     Destroy(collision.gameObject);
-    // }
     public void changeGun(GameObject a){
         Destroy(inHand);
         inHand = Instantiate(a, firePoint.position, firePoint.rotation, this.transform);
@@ -87,5 +81,12 @@ public class PlayerStats : MonoBehaviour
     // onKeyDown();
     public void coinPlus(int x){
         coins += x;
+        COINStext.text=coins.ToString();
+    }
+    public void updateMaxHp(){
+        if(coins >= 5){
+            maxHP += 200;
+            HP += 200;
+        }
     }
 }

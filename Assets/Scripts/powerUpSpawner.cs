@@ -19,11 +19,12 @@ public class powerUpSpawner : MonoBehaviour
     private GameObject Gun3;
 
     [SerializeField]
-    private float interval = 20f;
+    private int interval;
 
     // Start is called before the first frame update
     void Start()
     {
+        interval = 10;
         StartCoroutine(spawnEnemy(interval, powerUp));
         StartCoroutine(spawnEnemy(interval, powerUp2));
         StartCoroutine(spawnEnemy(interval, powerUp3));
@@ -34,8 +35,9 @@ public class powerUpSpawner : MonoBehaviour
 
     // Update is called once per frame
     private IEnumerator spawnEnemy(float interval, GameObject enemy){
-        yield return new WaitForSeconds(interval + Random.Range(-1.5f, 1.5f));
+        yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-11f, 8f),0.92f,Random.Range(-17f, 6f)),Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
+
 }

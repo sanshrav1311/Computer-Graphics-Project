@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float speed = 2f;
     private Transform t;
+    private int coins;
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         t = GetComponent<Transform>();
     }
@@ -27,5 +29,11 @@ public class PlayerMovement : MonoBehaviour
         float movX = (verticalInput * speed * sinY) + (horizontalInput * speed * cosY);
         float movZ = (verticalInput * speed * cosY) + (-1 * horizontalInput * speed * sinY); 
         rb.velocity = new Vector3(movX, 0, movZ);
+    }
+    public void updateSpeed(){
+        coins = this.GetComponent<PlayerStats>().coins;
+        if(coins >= 5){
+            speed += 1;
+        }
     }
 }

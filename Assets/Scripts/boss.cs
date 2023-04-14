@@ -14,10 +14,15 @@ public class boss : MonoBehaviour
     Transform target;
     UnityEngine.AI.NavMeshAgent agent;
     private Transform FP;
+        public TimeController a;
+
+
     
     void Start()
     {
         FP = gameObject.transform.GetChild(0).gameObject.transform;
+        a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
+
         HP = 2000f;
         // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -50,6 +55,7 @@ public class boss : MonoBehaviour
         HP -= damage;
         if(HP <= 0)
         {
+            a.currentTime = new System.DateTime(a.currentTime.Year, a.currentTime.Month, a.currentTime.Day, 12, a.currentTime.Minute, a.currentTime.Second);
             Destroy(gameObject);
         }
     }

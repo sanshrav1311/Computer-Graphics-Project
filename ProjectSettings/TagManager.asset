@@ -18,6 +18,7 @@ TagManager:
   - gun1
   - gun2
   - gun3
+  - time
   layers:
   - Default
   - TransparentFX

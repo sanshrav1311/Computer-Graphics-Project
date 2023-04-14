@@ -5,9 +5,12 @@ using UnityEngine;
 public class DamagePowerUp : MonoBehaviour
 {
     Shooting ps;
+    public TimeController a;
+
     // Start is called before the first frame update
     void Start()
     {
+        a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
         
     }
     void OnCollisionEnter(Collision collision)
@@ -25,7 +28,9 @@ public class DamagePowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(a.currentTime.Hour == 12){
+            Destroy(gameObject);
+        }
     }
 }
 
