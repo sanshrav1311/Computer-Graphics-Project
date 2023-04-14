@@ -11,8 +11,7 @@ public class PlayerStats : MonoBehaviour
     public Transform firePoint;
     public GameObject Gun1;
     public GameObject Gun2;
-    public GameObject inHand; 
-
+    public GameObject inHand;
     // Start is called before the first frame update
     void Start()
     {
