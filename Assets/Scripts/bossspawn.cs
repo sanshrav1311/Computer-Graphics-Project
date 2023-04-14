@@ -8,15 +8,19 @@ public class bossspawn : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab;
     public TimeController a;
+    public bool spawned = false;
     void Start()
     {
                 a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
+                spawned = false;
 
     }
     void Update()
     {
-        if(a.DayCount % 3 == 0){
-            Instantiate(enemyPrefab, new Vector3(0.0191474f,0.92f,25.55f),Quaternion.identity);
-        }
+            if(spawned == false){
+                Instantiate(enemyPrefab, new Vector3(-4.663539f,0.678f,4.79f),Quaternion.identity);
+                spawned = true;
+            }
+        
     }
 }

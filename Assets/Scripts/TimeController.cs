@@ -47,7 +47,7 @@ public class TimeController : MonoBehaviour
     private TimeSpan sunriseTime;
 
     private TimeSpan sunsetTime;
-    public int DayCount = 0; 
+    public int DayCount; 
         public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
@@ -60,6 +60,7 @@ public class TimeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DayCount = 1;
         currentTime=DateTime.Now.Date + TimeSpan.FromHours(startHour);
         sunriseTime=TimeSpan.FromHours(sunriseHour);
         sunsetTime=TimeSpan.FromHours(sunsetHour);

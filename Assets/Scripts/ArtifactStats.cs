@@ -36,6 +36,8 @@ public class ArtifactStats : MonoBehaviour
         HealthBar.value = artifactHP;
         Debug.Log(damage);
         if(artifactHP <= 0){
+                    Cursor.lockState = CursorLockMode.None;
+
             SceneManager.LoadScene(2);
         }
     }

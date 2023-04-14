@@ -47,6 +47,7 @@ public class Enemy2 : MonoBehaviour
     }
     void Attack(){
         ps.TakeDamage(25);
+        setAttackCooldown();
     }
     public void TakeDamage(float damage)
     {

@@ -11,7 +11,7 @@ public class EnemySpawing : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab3;
         public TimeController a;
-    public bool isDay3 = false;
+    public bool isDay3 = true;
 
     [SerializeField]
     private int interval = 5;
@@ -34,16 +34,16 @@ public class EnemySpawing : MonoBehaviour
     }
     void Update()
     {
-        if(a.DayCount % 3 == 0){
-            gameObject.SetActive(false);
-            isDay3 = true;
-        }
-        else{
-            if(isDay3){
-                        gameObject.SetActive(true);
-                        isDay3 = false;
-            }
+        // if(a.DayCount % 3 == 0){
+        //     isDay3 = true;
+        //     gameObject.SetActive(false);
+        // }
+        // else{
+        //     if(isDay3){
+        //                 gameObject.SetActive(true);
+        //                 isDay3 = false;
+        //     }
 
-    }
+    // }
     }
 }

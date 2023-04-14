@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class gameover : MonoBehaviour
 {
     // Start is called before the first frame update
-    void playAgain(){
+    public void playAgain(){
         SceneManager.LoadScene(1);
     }
-    void quit(){
+    public void quit(){
         Application.Quit();
     }
 }

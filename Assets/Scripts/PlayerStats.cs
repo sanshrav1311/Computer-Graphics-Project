@@ -44,6 +44,8 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("you take " + damage + " damage");
         if(HP <= 0){
             // Destroy(gameObject);
+                    Cursor.lockState = CursorLockMode.None;
+
             SceneManager.LoadScene(2);
         }
         HealthBar.value = HP;
