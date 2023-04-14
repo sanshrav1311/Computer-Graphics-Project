@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public float force = 1f;
     public float damageBuff;
+    public float damage;
     public float timeUntilNextShot;
     public float fireRate;
 
@@ -40,7 +41,7 @@ public class Shooting : MonoBehaviour
     void Shoot(){
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        bullet.GetComponent<Bullet>().damageBUFF = damageBuff;
+        bullet.GetComponent<Bullet>().damageBUFF = damageBuff * damage;
         rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
     }
 }
