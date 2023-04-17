@@ -19,6 +19,7 @@ TagManager:
   - gun2
   - gun3
   - time
+  - score
   layers:
   - Default
   - TransparentFX

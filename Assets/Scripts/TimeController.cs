@@ -48,7 +48,7 @@ public class TimeController : MonoBehaviour
 
     private TimeSpan sunsetTime;
     public int DayCount; 
-        public static bool GameIsPaused = false;
+    public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
     public TextMeshProUGUI day;
@@ -61,6 +61,7 @@ public class TimeController : MonoBehaviour
     void Start()
     {
         DayCount = 1;
+        PlayerPrefs.SetInt("Score", DayCount - 1);
         currentTime=DateTime.Now.Date + TimeSpan.FromHours(startHour);
         sunriseTime=TimeSpan.FromHours(sunriseHour);
         sunsetTime=TimeSpan.FromHours(sunsetHour);
@@ -150,6 +151,7 @@ public class TimeController : MonoBehaviour
         Time.timeScale=1f;
         GameIsPaused = false;
         DayCount += 1;
+        PlayerPrefs.SetInt("Score", DayCount - 1);
         day.text = DayCount.ToString();
     }
 
