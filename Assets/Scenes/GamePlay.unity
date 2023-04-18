@@ -445,7 +445,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 176726509}
   m_HandleRect: {fileID: 176726508}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -633,6 +633,7 @@ MonoBehaviour:
   e: {fileID: 1157747919}
   b: {fileID: 1296873614}
   once: 1
+  d: 0
 --- !u!4 &208379492
 Transform:
   m_ObjectHideFlags: 0
@@ -884,7 +885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1019,7 +1020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1627,7 +1628,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3428,6 +3429,7 @@ MonoBehaviour:
   enemyPrefab3: {fileID: 6421182895079355533, guid: f9a9dd90201705e4f947e9817d2cb540, type: 3}
   a: {fileID: 0}
   isDay3: 0
+  spawnRate: 0
   interval: 3
 --- !u!1 &1161401071 stripped
 GameObject:
@@ -5986,7 +5988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
       propertyPath: timeMultiplier
-      value: 2000
+      value: 20000
       objectReference: {fileID: 0}
     - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
       propertyPath: dayAmbientLight.b

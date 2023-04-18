@@ -153,5 +153,4 @@ public class TimeController : MonoBehaviour
         PlayerPrefs.SetInt("Score", DayCount - 1);
         day.text = DayCount.ToString();
     }
-
 }

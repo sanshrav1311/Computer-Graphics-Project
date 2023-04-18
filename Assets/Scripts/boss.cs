@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class boss : MonoBehaviour
 {
@@ -15,15 +17,17 @@ public class boss : MonoBehaviour
     UnityEngine.AI.NavMeshAgent agent;
     private Transform FP;
     public TimeController a;
-
+    // public Slider HealthBar;
 
     
     void Start()
     {
         FP = gameObject.transform.GetChild(0).gameObject.transform;
         a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         HP = 2000f;
+        // HealthBar.maxValue = HP;
+        // HealthBar.SetActive(true);
         // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -55,9 +59,11 @@ public class boss : MonoBehaviour
         HP -= damage;
         if(HP <= 0)
         {
+            // HealthBar.SetActive(false);
             a.currentTime = new System.DateTime(a.currentTime.Year, a.currentTime.Month, a.currentTime.Day, 12, a.currentTime.Minute, a.currentTime.Second);
             Destroy(gameObject);
         }
+        // HealthBar.value = HP;
     }
 
     void setAttackCooldown(){
