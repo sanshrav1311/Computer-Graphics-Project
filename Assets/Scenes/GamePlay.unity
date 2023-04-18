@@ -5988,7 +5988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
       propertyPath: timeMultiplier
-      value: 20000
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 7083218618817082741, guid: 68c81719bd468698cbd0b6f1be292511, type: 3}
       propertyPath: dayAmbientLight.b
