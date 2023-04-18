@@ -17,7 +17,11 @@ public class gameover : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("Score", 0));
         score.text=GetComponent<TMPro.TextMeshProUGUI>().text;
 
-        // score.text = PlayerPrefs.GetInt("Score", 0).ToString();
+        score.text = PlayerPrefs.GetInt("Score", 0).ToString();
+    }
+    void Update()
+    {
+        score.text = PlayerPrefs.GetInt("Score", 0).ToString();
     }
     public void playAgain(){
         SceneManager.LoadScene(1);

@@ -14,7 +14,7 @@ public class boss : MonoBehaviour
     Transform target;
     UnityEngine.AI.NavMeshAgent agent;
     private Transform FP;
-        public TimeController a;
+    public TimeController a;
 
 
     
@@ -22,7 +22,7 @@ public class boss : MonoBehaviour
     {
         FP = gameObject.transform.GetChild(0).gameObject.transform;
         a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
-
+        agent = GetComponent<NavMeshAgent>();
         HP = 2000f;
         // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;

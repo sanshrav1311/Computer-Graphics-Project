@@ -22,19 +22,20 @@ public class ArtifactStats : MonoBehaviour
     }
     public void healCrystal(){
         coins = target.GetComponent<PlayerStats>().coins;
-        if(coins >= 5){
+        if(coins >= 2 && artifactHP != aMaxHP){
             if(artifactHP + 1000 <= aMaxHP)
             {artifactHP += 1000f;}
             else
             {
                 artifactHP = aMaxHP;
             }
+            target.GetComponent<PlayerStats>().coinPlus(-2);
         }
     }
     public void TakeDamage(int damage){
         artifactHP -= damage;
         HealthBar.value = artifactHP;
-        Debug.Log(damage);
+        // Debug.Log(damage);
         if(artifactHP <= 0){
                     Cursor.lockState = CursorLockMode.None;
 

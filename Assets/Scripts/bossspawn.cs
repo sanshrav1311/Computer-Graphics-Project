@@ -15,10 +15,10 @@ public class bossspawn : MonoBehaviour
                 spawned = false;
 
     }
-    void Update()
+    void LateUpdate()
     {
             if(spawned == false){
-                Instantiate(enemyPrefab, new Vector3(-4.663539f,0.678f,4.79f),Quaternion.identity);
+                Instantiate(enemyPrefab, new Vector3(-4.663539f,0.67f,4.79f),Quaternion.identity);
                 spawned = true;
             }
         

@@ -41,7 +41,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage){
         HP -= damage * invincible;
-        Debug.Log("you take " + damage + " damage");
+        // Debug.Log("you take " + damage + " damage");
         if(HP <= 0){
             // Destroy(gameObject);
                     Cursor.lockState = CursorLockMode.None;
@@ -86,9 +86,11 @@ public class PlayerStats : MonoBehaviour
         COINStext.text=coins.ToString();
     }
     public void updateMaxHp(){
-        if(coins >= 5){
+        if(coins >= 3){
             maxHP += 200;
             HP += 200;
+            HealthBar.maxValue = maxHP;
+            coinPlus(-3);
         }
     }
 }

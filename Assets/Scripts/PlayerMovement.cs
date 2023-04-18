@@ -32,8 +32,9 @@ public class PlayerMovement : MonoBehaviour
     }
     public void updateSpeed(){
         coins = this.GetComponent<PlayerStats>().coins;
-        if(coins >= 5){
+        if(coins >= 1){
             speed += 1;
+            GetComponent<PlayerStats>().coinPlus(-1);
         }
     }
 }

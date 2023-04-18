@@ -88,7 +88,6 @@ public class TimeController : MonoBehaviour
         {
             timeText.text=currentTime.ToString("HH:mm");
         }
-        Debug.Log(currentTime.Hour);
     }
 
     private void RotateSun()

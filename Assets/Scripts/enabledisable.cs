@@ -8,7 +8,7 @@ public class enabledisable : MonoBehaviour
     public GameObject e;
     public GameObject b;
     public bool once = true;
-
+    public int d;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,17 +18,18 @@ public class enabledisable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(a.DayCount % 3 == 0){
+        d = a.DayCount;
+        if(d % 3 != 0){
             if(once){
-                b.SetActive(true);
-                e.SetActive(false);
+                e.SetActive(true);
+                b.SetActive(false);
                 once = false;
             }
         }
         else{
             if(!once){
-                b.SetActive(false);
-                e.SetActive(true);
+                e.SetActive(false);
+                b.SetActive(true);
                 once = true;
             }
         }
