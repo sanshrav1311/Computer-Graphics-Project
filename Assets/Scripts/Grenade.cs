@@ -16,6 +16,7 @@ public class Grenade : MonoBehaviour
     GameObject artifact;
     public ParticleSystem smoke;
     private float smokeTime = 2f;
+    public AudioSource cs;
     void smokeFun()
 {
     ParticleSystem smokeInstance = Instantiate(smoke, transform.position, transform.rotation) as ParticleSystem;
@@ -23,6 +24,7 @@ public class Grenade : MonoBehaviour
 }
 
     void Start() {
+    cs = GameObject.FindGameObjectWithTag("sss").GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player");
         artifact = GameObject.FindGameObjectWithTag("Artifact");
         StartCoroutine(explode());       
@@ -38,6 +40,7 @@ public class Grenade : MonoBehaviour
             artifact.GetComponent<ArtifactStats>().TakeDamage(100);
         }
         smokeFun();
+        cs.Play();
         Destroy(gameObject);
     }
     public float damageBUFF = 1f;
@@ -54,6 +57,7 @@ public class Grenade : MonoBehaviour
              collision.gameObject.GetComponent<ArtifactStats>().TakeDamage(100);
          }
         smokeFun();
+        cs.Play();
         Destroy(gameObject);
         // if (collision.transform.tag == "Enemy")
         //  {

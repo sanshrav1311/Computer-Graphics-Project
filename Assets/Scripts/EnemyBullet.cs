@@ -28,7 +28,7 @@ public class EnemyBullet : MonoBehaviour
          if (collision.transform.tag == "Player")
          {
              // do damage here, for example:
-             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50f);
+             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(50f * damageBUFF);
          }
          if (collision.transform.tag == "Artifact")
          {

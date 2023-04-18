@@ -17,23 +17,31 @@ public class boss : MonoBehaviour
     UnityEngine.AI.NavMeshAgent agent;
     private Transform FP;
     public TimeController a;
+    public float bmaxHP = 2000f;
     // public Slider HealthBar;
-
-    
+    public GameObject q;
+    public bossspawn bss;
     void Start()
     {
+        // HealthBar = Slider.FindSliderWithTag("bar");
+        // HealthBar = GameObject.FindGameObjectWithTag("barobj").GetComponent<Slider>();
+        q = GameObject.FindGameObjectWithTag("barobj");
+         bss = GameObject.FindGameObjectWithTag("bossspawn").GetComponent<bossspawn>();
+        FP = gameObject.transform.GetChild(0).gameObject.transform;
         FP = gameObject.transform.GetChild(0).gameObject.transform;
         a = GameObject.FindGameObjectWithTag("time").GetComponent<TimeController>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         HP = 2000f;
         // HealthBar.maxValue = HP;
-        // HealthBar.SetActive(true);
-        // agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        // q.SetActive(true);
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
+                q = GameObject.FindGameObjectWithTag("barobj");
+
         attackCooldown -= Time.deltaTime;
         float distance = Vector3.Distance(target.position, transform.position);
        
@@ -46,6 +54,12 @@ public class boss : MonoBehaviour
                 Attack();
             }
         }
+        if(a.currentTime.Hour == 12){
+            bss.spawned = false;
+            q.SetActive(false);
+            Destroy(gameObject);
+        }
+        // HealthBar.value = HP;
     }
     void Attack(){
         transform.LookAt(target);
@@ -59,7 +73,8 @@ public class boss : MonoBehaviour
         HP -= damage;
         if(HP <= 0)
         {
-            // HealthBar.SetActive(false);
+            q.SetActive(false);
+            bss.spawned = false;
             a.currentTime = new System.DateTime(a.currentTime.Year, a.currentTime.Month, a.currentTime.Day, 12, a.currentTime.Minute, a.currentTime.Second);
             Destroy(gameObject);
         }

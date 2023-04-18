@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1959913330667464794}
   - component: {fileID: 421727650335931252}
   m_Layer: 0
-  m_Name: fire ball
+  m_Name: fire ball 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e95e9c4d5519afc393cb464dfb8597d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageBUFF: 2
+  damageBUFF: 1
 --- !u!1001 &3250109923616088301
 PrefabInstance:
   m_ObjectHideFlags: 0

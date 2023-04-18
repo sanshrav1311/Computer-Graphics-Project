@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour
          {
              collision.gameObject.GetComponent<Enemy>().TakeDamage(50f * damageBUFF);
          }
+         if (collision.transform.tag == "bosschotu")
+         {
+             collision.gameObject.GetComponent<bosschotu>().TakeDamage(50f * damageBUFF);
+         }
          if (collision.transform.tag == "boss")
          {
              collision.gameObject.GetComponent<boss>().TakeDamage(50f * damageBUFF);

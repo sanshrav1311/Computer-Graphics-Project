@@ -28,6 +28,10 @@ TagManager:
   - rs
   - ts
   - mcs
+  - bosschotu
+  - bar
+  - barobj
+  - bossspawn
   layers:
   - Default
   - TransparentFX
