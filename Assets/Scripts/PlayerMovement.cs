@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 2f;
     private Transform t;
     private int coins;
+     public AudioSource cs;
     // Start is called before the first frame update
     void Start()
     {
+    cs = GameObject.FindGameObjectWithTag("bs").GetComponent<AudioSource>();
         
         rb = GetComponent<Rigidbody>();
         t = GetComponent<Transform>();
@@ -33,8 +35,9 @@ public class PlayerMovement : MonoBehaviour
     public void updateSpeed(){
         coins = this.GetComponent<PlayerStats>().coins;
         if(coins >= 1){
-            speed += 1;
+            speed += 0.3f;
             GetComponent<PlayerStats>().coinPlus(-1);
+            cs.Play();
         }
     }
 }

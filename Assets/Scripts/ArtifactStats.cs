@@ -12,10 +12,12 @@ public class ArtifactStats : MonoBehaviour
     public GameObject target;
     private int coins;
     public Slider HealthBar;
+     public AudioSource cs;
 
     // Start is called before the first frame update
     void Start()
     {
+    cs = GameObject.FindGameObjectWithTag("bs").GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("Player");
         artifactHP = 10000f;
         HealthBar.value = artifactHP;
@@ -30,6 +32,7 @@ public class ArtifactStats : MonoBehaviour
                 artifactHP = aMaxHP;
             }
             target.GetComponent<PlayerStats>().coinPlus(-2);
+            cs.Play();
         }
     }
     public void TakeDamage(int damage){

@@ -7,11 +7,11 @@ public class Coin : MonoBehaviour
     PlayerStats ps;
     // [SerializeField] private float speed = 100f;
     float yRotation = 1;
-    public AudioSource coinSound;
-    public GameObject sound;
+    public AudioSource cs;
     // Start is called before the first frame update
     void Start()
     {
+        cs = GameObject.FindGameObjectWithTag("cs").GetComponent<AudioSource>();
         ps = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
     }
 
@@ -33,12 +33,17 @@ public class Coin : MonoBehaviour
         if (collision.transform.tag == "Player")
          {
              // do damage here, for example:
+                     cs.Play();
+
              ps.coinPlus(1);
-            StartCoroutine(yep());
+                     Destroy(gameObject);
+
+            // StartCoroutine(yep());
          }
     }
-    IEnumerator yep(){
-        yield return new WaitForSeconds(0.1f);
-        Destroy(gameObject);
-    }
+    // IEnumerator yep(){
+    //     cs.Play();
+    //     yield return new WaitForSeconds(0.1f);
+    //     Destroy(gameObject);
+    // }
 }

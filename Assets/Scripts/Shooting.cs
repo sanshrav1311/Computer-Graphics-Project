@@ -14,10 +14,12 @@ public class Shooting : MonoBehaviour
     public float timeUntilNextShot;
     public float fireRate;
     public int ammo;
-
+    public AudioSource cs;
+    // cs = GameObject.FindGameObjectWithTag("ss").GetComponent<AudioSource>();
     void Start()
     {
         firePoint = GameObject.FindGameObjectWithTag("FP").transform;
+        cs = GameObject.FindGameObjectWithTag("ss").GetComponent<AudioSource>();
         damageBuff = 1f;
     }
 
@@ -45,6 +47,7 @@ public class Shooting : MonoBehaviour
         bullet.GetComponent<Bullet>().damageBUFF = damageBuff * damage;
         rb.AddForce(firePoint.forward * force, ForceMode.Impulse);
         ammo -= 1;
+        cs.Play();
     }
     public void assignAmmo(int a){
         ammo = a;

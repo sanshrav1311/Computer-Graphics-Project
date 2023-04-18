@@ -60,8 +60,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7be6e156473aacaa874eb61b4610d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 8583217938299541678, guid: f5f8ce34d40ebfa669591bd6e6ccb422, type: 3}
-  sound: {fileID: 0}
 --- !u!1 &6351407174866290486
 GameObject:
   m_ObjectHideFlags: 0

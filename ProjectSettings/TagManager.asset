@@ -20,6 +20,14 @@ TagManager:
   - gun3
   - time
   - score
+  - cs
+  - ss
+  - bs
+  - mss
+  - sss
+  - rs
+  - ts
+  - mcs
   layers:
   - Default
   - TransparentFX

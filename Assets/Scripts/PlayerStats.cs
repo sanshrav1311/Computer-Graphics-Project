@@ -23,9 +23,11 @@ public class PlayerStats : MonoBehaviour
     public GameObject sniper;
     public TextMeshProUGUI COINStext;
     public Slider HealthBar;
+     public AudioSource cs;
     // Start is called before the first frame update
     void Start()
     {
+    cs = GameObject.FindGameObjectWithTag("bs").GetComponent<AudioSource>();
         HP = 1000f;
         HealthBar.value = HP;
         coins = 0;
@@ -73,6 +75,7 @@ public class PlayerStats : MonoBehaviour
             inHand.GetComponent<Shooting>().assignAmmo(g2ammo);
             g2ammo = t;
         }
+        HealthBar.value = HP;
 
     }
 
@@ -91,6 +94,7 @@ public class PlayerStats : MonoBehaviour
             HP += 200;
             HealthBar.maxValue = maxHP;
             coinPlus(-3);
+            cs.Play();
         }
     }
 }

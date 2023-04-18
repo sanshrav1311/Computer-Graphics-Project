@@ -13,9 +13,12 @@ public class gameover : MonoBehaviour
     public TextMeshProUGUI score5;
     public int[] myNum = new int[6];
     int a,b,c,d,e,f;
+    public AudioSource cs;
+
     // Start is called before the first frame update
     void Start()
     {
+        cs = GameObject.FindGameObjectWithTag("mcs").GetComponent<AudioSource>();
         a = PlayerPrefs.GetInt("Score1", 0);
         b = PlayerPrefs.GetInt("Score2", 0);
         c = PlayerPrefs.GetInt("Score3", 0);
@@ -48,9 +51,11 @@ public class gameover : MonoBehaviour
         score5.text = myNum[5].ToString() + "\n" + myNum[4].ToString() + "\n" + myNum[3].ToString() + "\n" + myNum[2].ToString() + "\n" + myNum[1].ToString();
     }
     public void playAgain(){
+        cs.Play();
         SceneManager.LoadScene(1);
     }
     public void quit(){
+        cs.Play();
         Application.Quit();
     }
 }
